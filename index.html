@@ -115,9 +115,9 @@
   }
 
   .slot.title{ --wire-h: 58px; }
-  .slot.title .value{ font-size: 44px; font-weight: 700; letter-spacing: -0.02em; }
+  .slot.title .value{ font-size: clamp(24px, 8vw, 44px); font-weight: 700; letter-spacing: -0.02em; }
   .slot.subtitle{ --wire-h: 24px; margin-top: 20px; }
-  .slot.subtitle .value{ font-family: 'JetBrains Mono', monospace; font-size: 13px; color: rgba(255,255,255,0.85); font-weight: 400; letter-spacing: 0.01em; }
+  .slot.subtitle .value{ font-family: 'JetBrains Mono', monospace; font-size: clamp(9.5px, 2.9vw, 13px); color: rgba(255,255,255,0.85); font-weight: 400; letter-spacing: 0.01em; }
 
   .slot.revealed .wire{ opacity: 0; }
   .slot.revealed .value{ opacity: 1; }
@@ -258,6 +258,7 @@
 
   @media (max-width: 780px){
     .hero-row{ flex-direction: column; gap: 40px; padding-top: 70px; }
+    .hero{ flex: 1 1 auto; max-width: 100%; }
   }
 
   .fig-label{
@@ -428,6 +429,9 @@
     .project-card:hover,
     .project-card:focus-within{
       height: 420px;
+      max-height: 70vh;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
     }
   }
 
